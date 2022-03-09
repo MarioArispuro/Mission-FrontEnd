@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pastelería La Sabrosa</title>
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="main-wrapper">
+        <header>
+            <nav>
+                <ul>
+                    <li class="icon1"><a href="index.html">Inicio</a></li>
+                    <li class="icon2"><a href="info.html">Información</a></li>
+                    <li class="icon3"><a href="pedidos.html">Pedidos</a></li>
+                    <li class="icon4"><a  class="disable" href="inventario.html">Pedidos/Inventario</a></li>
+                    <li class="icon5"><a href="Login.html">Iniciar Sesión</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main style="width: 95%;">
+            <article class="heading">                
+                <section  id="tablaPedidos" class="content">
+                    
+                    <div style="text-align: center;">
+                        <h2>Pedidos</h2>
+                        <table class="rtable">                        
+                            <thead>
+                                <tr>
+                                    <th scope="col">N° Pedido</th>
+                                    <th scope="col">Estatus</th>
+                                    <th scope="col">Cliente</th>
+                                    <th scope="col">Teléfono</th>
+                                    <th scope="col">Correo</th>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">Tamaño Pastel</th>
+                                    <th scope="col">Forma</th>
+                                    <th scope="col">Sabor</th>
+                                    <th scope="col">Adornos</th>
+                                    <th scope="col">Comentarios</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Pedido"><a href="#">1</a></td>
+                                    <td data-label="Estauts">Pendiente</td>
+                                    <td data-label="Cliente">Karla Soto</td>
+                                    <td data-label="Tel">6444122413</td>
+                                    <td data-label="Correo">ksoto@gmail.com</td>
+                                    <td data-label="Fecha">02/03/2022</td>
+                                    <td data-label="Tam">Mediano</td>
+                                    <td data-label="Forma">Cuadrado</td>
+                                    <td data-label="Sabor">Chocolate</td>
+                                    <td data-label="Adornos">Nutella, M&M's, Bombones</td>
+                                    <td data-label="Comentarios">Pastel mediano de chocolate, cubierto con nutella, encima M&M's y bonbones.</td>
+                                </tr>
+                            </tbody>
+                            
+                            <tbody>
+                                <tr>
+                                    <td data-label="Pedido"><a href="#">2</a></td>
+                                    <td data-label="Estauts">Pendiente</td>
+                                    <td data-label="Cliente">Mario Capistran</td>
+                                    <td data-label="Tel">6442152030</td>
+                                    <td data-label="Correo">borrecapi@gmail.com</td>
+                                    <td data-label="Fecha">03/03/2022</td>
+                                    <td data-label="Tam">Grande</td>
+                                    <td data-label="Forma">Redondo</td>
+                                    <td data-label="Sabor">Mixto</td>
+                                    <td data-label="Adornos">Merengue, cerezas, azucar de colores, chantilly</td>
+                                    <td data-label="Comentarios">Pan red velvet con vainilla</td>
+                                </tr>
+                          </tbody>
+                      </table>
+                      <br>
+                      <a href="#"><button class="button">Ver Todos</button></a> 
+                      <a href="#"><button class="button">Ver Pendientes</button></a>
+                      <a href="#"><button class="button">Ver Terminados</button></a>
+                      <a href="#"><button class="button">Reportes</button></a>
+                    </div>
+                </section>
+<hr>
+                <section  id="tablaPedidos" class="content">
+                
+                    <div style="text-align: center;">
+                    <h2>Inventario de adornos</h2>
+                    <table style:"width:50%;">                        
+                        <thead>
+                            <tr>
+                                <th scope="col">Adorno</th>
+                                <th scope="col">Unidad</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Adorno">Merengue</td>
+                                <td data-label="Unidad">Caja</td>
+                                <td data-label="Cantidad">15</td>
+                                <td data-label="Agegar"><button>+</button></td>
+                            </tr>
+                        </tbody>
+
+                        <tbody>
+                            <tr>
+                                <td data-label="Adorno">Azúcar de colores</td>
+                                <td data-label="Unidad">Bolsa 200g</td>
+                                <td data-label="Cantidad">9</td>
+                                <td data-label="Agegar"><button>+</button></td>
+                            </tr>
+                        </tbody>
+                        
+                        <tbody>
+                            <tr>
+                                <td data-label="Adorno">M&M's</td>
+                                <td data-label="Unidad">Frasco 3.7Kg</td>
+                                <td data-label="Cantidad">6</td>
+                                <td data-label="Agegar"><button>+</button></td>
+                            </tr>
+                        </tbody>
+
+                        <tbody>
+                            <tr>
+                                <td data-label="Adorno">Bombones</td>
+                                <td data-label="Unidad">Bolsa 400g</td>
+                                <td data-label="Cantidad">11</td>
+                                <td data-label="Agegar"><button>+</button></td>
+                            </tr>
+                        </tbody>
+
+                        <tbody>
+                            <tr>
+                                <td data-label="Adorno">Rodajas de fresa</td>
+                                <td data-label="Unidad">Caja 900g</td>
+                                <td data-label="Cantidad">4</td>
+                                <td data-label="Agegar"><button>+</button></td>
+                            </tr>
+                        </tbody>
+
+                        <tbody>
+                            <tr>
+                                <td data-label="Adorno">Cerezas</td>
+                                <td data-label="Unidad">Frasco 2Kg</td>
+                                <td data-label="Cantidad">4</td>
+                                <td data-label="Agegar"><button>+</button></td>
+                            </tr>
+                        </tbody>
+
+                        <tbody>
+                            <tr>
+                                <td data-label="Adorno">Nutella</td>
+                                <td data-label="Unidad">Frasco 700g</td>
+                                <td data-label="Cantidad">9</td>
+                                <td data-label="Agegar"><button>+</button></td>
+                            </tr>
+                        </tbody>
+
+                        <tbody>
+                            <tr>
+                                <td data-label="Adorno">Fondant</td>
+                                <td data-label="Unidad">Frasco 680g</td>
+                                <td data-label="Cantidad">5</td>
+                                <td data-label="Agegar"><button>+</button></td>
+                            </tr>
+                        </tbody>
+                        
+                        <tbody>
+                            <tr>
+                                <td data-label="Adorno">Chantilly</td>
+                                <td data-label="Unidad">Frasco 4Kg</td>
+                                <td data-label="Cantidad">6</td>
+                                <td data-label="Agegar"><button>+</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <a href="#"><button class="button">Ajustar Inventario</button></a>
+                    <a href="#"><button class="button">Reportes</button></a>
+                </div>       
+            </section>
+            </article>
+        </main>
+
+        <footer>
+            <div>
+                <ul>
+                    <li><a href="https://twitter.com"><img class="icon" src="assets/social/twitter.png" alt="icon for twitter"></a></li>
+                    <li><a href="http://www.facebook.com"><img class="icon" src="assets/social/facebook.png" alt="icon for facebook"></a></li>
+                    <li><a href="http://www.youtube.com"><img class="icon" src="assets/social/youtube.png" alt="icon for youtube"></a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
