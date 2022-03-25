@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex LaunchX</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div id="main-wrapper">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="https://pokeapi.co/" target="_blank">PokeAPI</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <article >
+                <div class="cajaPokedex">                    
+                    
+                    <h2 class="cajaPokedex-header">Pokédex LaunchX
+                    </h2>                  
+
+                    <div class="cajaPokedex-container">                        
+                            <div id ="DivDatos" style="text-align: center;">                                     
+                                <label for="buscar">Nombre o número del pokémon:</label>
+                                <input type="text" placeholder="Nombre/número" id="pokeBusca" name="pokeBusca">
+
+                                <button id="btnBuscar" class="button" onclick="fetchPokemon()">Buscar Pokémon</button><br>
+                                <img src="./pokeball.png" alt="Pokemon" id="pokeImg" width="150px">
+                                <br>
+                                
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" id="pokeName" name="pokeName" readonly>
+
+
+                                <label for="pokeID">#:</label>
+                                <input type="text" id="pokeID" name="pokeID" readonly>
+                                <br>
+                                <br>
+                                <label for="pokeType">Tipo:</label>
+                                <input type="text" id="pokeType" name="pokeType" readonly>
+                                <br>
+                                <br>
+                                <label for="Movimientos">Movimientos:</label>
+                                <textarea name="Movimientos" cols="50" rows="4" wrap="hard" id="Movimientos" readonly></textarea>                                                                                                
+                            </div>                        
+                    </div>
+            </article>            
+        </main>
+
+        <footer>
+            <script src="./pokedex.js"></script>
+            <script>                
+                var input = document.getElementById("pokeBusca");                
+                input.addEventListener("keyup", function(event) {                
+                if (event.keyCode === 13) {                    
+                    event.preventDefault();                    
+                    document.getElementById("btnBuscar").click();
+                }
+                });
+            </script>
+            <div>
+                <ul>
+                    <li><a href="https://github.com/MarioArispuro/" target="_blank"><img src="github1.png" alt="icono github"></a></li>                    
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
