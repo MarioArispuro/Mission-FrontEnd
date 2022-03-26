@@ -30,8 +30,17 @@
                                 <input type="text" placeholder="Nombre/número" id="pokeBusca" name="pokeBusca">
 
                                 <button id="btnBuscar" class="button" onclick="fetchPokemon()">Buscar Pokémon</button><br>
-                                <img src="./pokeball.png" alt="Pokemon" id="pokeImg" width="150px">
+                                
                                 <br>
+                                <div class="caja">
+                                    <div>
+                                        <button id="btnPrev" class="button" type="button">Anterior</button>
+                                    </div>
+                                    <img src="./pokeball.png" alt="Pokemon" id="pokeImg">
+                                    <div>        
+                                        <button id="btnNext1" class="button" type="button">Siguiente</button>
+                                    </div>
+                                </div>                                
                                 
                                 <label for="nombre">Nombre:</label>
                                 <input type="text" id="pokeName" name="pokeName" readonly>
@@ -42,11 +51,15 @@
                                 <br>
                                 <br>
                                 <label for="pokeType">Tipo:</label>
-                                <input type="text" id="pokeType" name="pokeType" readonly>
+                                <input type="text" id="pokeType" name="pokeType" style="font-weight: bold;" readonly>
+                                <label for="pokeType2" id="lblpokeType2">/</label>
+                                <input type="text" id="pokeType2" name="pokeType2" style="font-weight: bold;" readonly>
                                 <br>
                                 <br>
-                                <label for="Movimientos">Movimientos:</label>
-                                <textarea name="Movimientos" cols="50" rows="4" wrap="hard" id="Movimientos" readonly></textarea>                                                                                                
+                                <label for="Movimientos">Estadísticas:</label><br>
+                                
+                                <label for="Movimientos">Movimientos:</label>                                
+                                <textarea name="Movimientos" cols="50" rows="4" wrap="hard" id="Movimientos" readonly></textarea>
                             </div>                        
                     </div>
             </article>            
@@ -54,15 +67,6 @@
 
         <footer>
             <script src="./pokedex.js"></script>
-            <script>                
-                var input = document.getElementById("pokeBusca");                
-                input.addEventListener("keyup", function(event) {                
-                if (event.keyCode === 13) {                    
-                    event.preventDefault();                    
-                    document.getElementById("btnBuscar").click();
-                }
-                });
-            </script>
             <div>
                 <ul>
                     <li><a href="https://github.com/MarioArispuro/" target="_blank"><img src="github1.png" alt="icono github"></a></li>                    
