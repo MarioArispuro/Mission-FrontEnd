@@ -10,7 +10,7 @@ const fetchPokemon = () => {
     const pokeNameInput = document.getElementById("pokeBusca");
     let pokeBusca = pokeNameInput.value;
     pokeName = pokeBusca.toLowerCase();
-    const url = `https://pokeapi.co/api/v2/pokemon/${pokeBusca}`;
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokeBusca.toLowerCase()}`;
     fetch(url).then((res) => {
         if (res.status != "200") {            
             console.log(res);            
@@ -41,6 +41,14 @@ const fetchPokemon = () => {
             /*console.log(pokeImg);*/
             /*console.log(pokeType);*/
 
+
+            textareaStats = document.getElementById('Stats');
+            textareaStats.value = ''
+            for (i = 0; i < data.stats.length; ++i) {
+                textareaStats.value += "*"+data.stats[i].stat.name.toUpperCase()+": "+data.stats[i].base_stat+"     ";
+            }
+
+
             textarea = document.getElementById('Movimientos');
             textarea.value = ''
             for (i = 0; i < data.moves.length; ++i) {
@@ -50,12 +58,157 @@ const fetchPokemon = () => {
     });
 }
 
+let clicked;
+var input2 = document.getElementById("pokeID");                
+input2.addEventListener("keyup", function(event) {
+clicked = true;
+if (event.key === 'Enter') {
+    event.preventDefault();    
+    document.getElementById("btnNext").click();        
+}
+});
+
+var input3 = document.getElementById("pokeID");                
+input3.addEventListener("keyup", function(event) {                
+if (event.key === 'Enter') {                    
+    event.preventDefault();    
+    document.getElementById("btnPrev").click();    
+}
+});
+
+const fetchPokemonID2 = () => {
+    const pokeIdInput = document.getElementById("pokeID");
+    let pokeBuscaID = pokeIdInput.value;    
+
+    if (typeof pokeBuscaID === 'undefined' || pokeBuscaID === null || pokeBuscaID == "")
+    {                
+        pokeBuscaID = 1;
+        document.getElementById("pokeID").value = pokeBuscaID;        
+    }
+    else
+    {            
+            pokeBuscaID=parseInt(pokeBuscaID)+1;        
+            /*pokeBuscaID=parseInt(pokeBuscaID)-1;*/        
+
+        document.getElementById("pokeID").value = pokeBuscaID;
+    }
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokeBuscaID}`;
+    fetch(url).then((res) => {
+        if (res.status != "200") {            
+            console.log(res);            
+            pokeImage("./notpokemon.png")
+        }
+        else {       
+            console.log(res);         
+            return res.json();
+        }
+    }).then((data) => {
+        if (data) {
+            console.log(data);
+            let pokeImg = data.sprites.front_default;            
+            let pokeID =  data.id;
+            let pokeName = data.name;
+
+            let arrType = data.types.length;
+            let pokeType = data.types[0].type.name;
+
+            let pokeType2
+            if(arrType > 1){
+                pokeType2 = data.types[1].type.name;
+                /*console.log("el pokemon tiene mas de un tipo:"+arrType);*/
+            }
+
+            pokeImage(pokeImg,pokeID,pokeName,pokeType,pokeType2);
+                        
+            /*console.log(pokeImg);*/
+            /*console.log(pokeType);*/
+
+            textareaStats = document.getElementById('Stats');
+            textareaStats.value = ''
+            for (i = 0; i < data.stats.length; ++i) {
+                textareaStats.value += "*"+data.stats[i].stat.name.toUpperCase()+": "+data.stats[i].base_stat+"     ";
+            }
+
+            textarea = document.getElementById('Movimientos');
+            textarea.value = ''
+            for (i = 0; i < data.moves.length; ++i) {
+                textarea.value +=data.moves[i].move.name+', ';
+            }            
+        }       
+    });
+}
+
+
+const fetchPokemonID1 = () => {
+    const pokeIdInput = document.getElementById("pokeID");
+    let pokeBuscaID = pokeIdInput.value;    
+
+    if (typeof pokeBuscaID === 'undefined' || pokeBuscaID === null || pokeBuscaID == "")
+    {                
+        pokeBuscaID = 1;
+        document.getElementById("pokeID").value = pokeBuscaID;        
+    }
+    else
+    {                              
+        pokeBuscaID=parseInt(pokeBuscaID)-1;
+
+        document.getElementById("pokeID").value = pokeBuscaID;
+    }
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokeBuscaID}`;
+    fetch(url).then((res) => {
+        if (res.status != "200") {            
+            console.log(res);            
+            pokeImage("./notpokemon.png")
+        }
+        else {       
+            console.log(res);         
+            return res.json();
+        }
+    }).then((data) => {
+        if (data) {
+            console.log(data);
+            let pokeImg = data.sprites.front_default;            
+            let pokeID =  data.id;
+            let pokeName = data.name;
+
+            let arrType = data.types.length;
+            let pokeType = data.types[0].type.name;
+
+            let pokeType2
+            if(arrType > 1){
+                pokeType2 = data.types[1].type.name;
+                /*console.log("el pokemon tiene mas de un tipo:"+arrType);*/
+            }
+
+            pokeImage(pokeImg,pokeID,pokeName,pokeType,pokeType2);
+                        
+            /*console.log(pokeImg);*/
+            /*console.log(pokeType);*/
+
+            
+            textareaStats = document.getElementById('Stats');
+            textareaStats.value = ''
+            for (i = 0; i < data.stats.length; ++i) {
+                textareaStats.value += "*"+data.stats[i].stat.name.toUpperCase()+": "+data.stats[i].base_stat+"     ";
+            }
+
+            
+            textareaMovs = document.getElementById('Movimientos');
+            textareaMovs.value = ''
+            for (i = 0; i < data.moves.length; ++i) {
+                textareaMovs.value +=data.moves[i].move.name+', ';
+            }
+        }       
+    });
+}
+
+
 const pokeImage = (url,ID,Nombre,pkType,pkType2) => {
     const pokePhoto = document.getElementById("pokeImg");
 
     if(typeof ID === 'undefined' || typeof Nombre === 'undefined' || typeof pkType === 'undefined') {
         document.getElementById("pokeID").value =   document.getElementById("pokeName").value =
-        document.getElementById("pokeType").value  = document.getElementById('Movimientos').value = "";
+        document.getElementById("pokeType").value = document.getElementById('Stats').value  = document.getElementById('Movimientos').value = "";
         
         pokePhoto.src = url;
         document.getElementById("pokeType").style.backgroundColor = 'White'
@@ -168,5 +321,3 @@ function PonerColorTipo(tipo){
         }
     }    
 }
-
-

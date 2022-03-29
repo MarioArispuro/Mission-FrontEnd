@@ -34,11 +34,11 @@
                                 <br>
                                 <div class="caja">
                                     <div>
-                                        <button id="btnPrev" class="button" type="button">Anterior</button>
+                                        <button id="btnPrev" class="button" type="button" onclick="fetchPokemonID1()">Anterior</button>
                                     </div>
                                     <img src="./pokeball.png" alt="Pokemon" id="pokeImg">
                                     <div>        
-                                        <button id="btnNext1" class="button" type="button">Siguiente</button>
+                                        <button id="btnNext" class="button" type="button" onclick="fetchPokemonID2()">Siguiente</button>
                                     </div>
                                 </div>                                
                                 
@@ -46,7 +46,7 @@
                                 <input type="text" id="pokeName" name="pokeName" readonly>
 
 
-                                <label for="pokeID">#:</label>
+                                <label for="ID">#:</label>
                                 <input type="text" id="pokeID" name="pokeID" readonly>
                                 <br>
                                 <br>
@@ -56,10 +56,11 @@
                                 <input type="text" id="pokeType2" name="pokeType2" style="font-weight: bold;" readonly>
                                 <br>
                                 <br>
-                                <label for="Movimientos">Estadísticas:</label><br>
-                                
+                                <label for="Stats">Estadísticas:</label><br>
+                                <textarea name="Stats" cols="1" rows="6" wrap="hard" id="Stats" readonly></textarea>
+
                                 <label for="Movimientos">Movimientos:</label>                                
-                                <textarea name="Movimientos" cols="50" rows="4" wrap="hard" id="Movimientos" readonly></textarea>
+                                <textarea name="Movimientos" cols="20" rows="6" wrap="hard" id="Movimientos" readonly></textarea>
                             </div>                        
                     </div>
             </article>            
