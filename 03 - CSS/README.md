@@ -2,7 +2,7 @@
 
 En esta semana vimos como meterle estilos a nuestras páginas y hacer que tomen personalidad completa.
 
-Para esta práctica necesito que clonen la página que está en el siguiente enlace Link del diseño by Adhiari Subekti
+Para esta práctica necesito que clonen la página que está en el siguiente enlace <a href="https://dribbble.com/Adhiari_is">Link del diseño</a> by <a href="https://dribbble.com/Adhiari_is">Adhiari Subekti</a>
 
 Como pueden ver es una página de vacunación y en estos momentos que se está poniendo la tercer dosis en varios estados de la república y que en algunos otros se está poniendo la segunda o incluso la primera sigue siendo muy importante recordar toda esta información.
 
